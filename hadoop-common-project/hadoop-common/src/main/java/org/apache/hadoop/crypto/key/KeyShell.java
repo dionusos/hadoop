@@ -537,8 +537,8 @@ public class KeyShell extends CommandShell {
   }
 
   private String prettifyException(Exception e) {
-    return e.getClass().getSimpleName() + ": " +
-        e.getLocalizedMessage().split("\n")[0];
+    String message = e.getLocalizedMessage() == null ? "null" : e.getLocalizedMessage();
+    return e.getClass().getSimpleName() + ": " + message.split("\n")[0];
   }
 
   /**
